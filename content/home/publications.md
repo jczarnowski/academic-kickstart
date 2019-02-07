@@ -4,8 +4,8 @@
 widget = "publications"  # Do not modify this line!
 active = true  # Activate this widget? true/false
 
-title = "Recent Publications"
-subtitle = ""
+title = "Selected Publications"
+subtitle = "Full list on Google Scholar"
 
 # Order that this section will appear in.
 weight = 20

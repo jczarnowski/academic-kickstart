@@ -1,16 +1,16 @@
 +++
 # Display name
-name = "Nelson Bighetti"
+name = "Jan Czarnowski"
 
 # Is this the primary user of the site?
 superuser = true
 
 # Role/position
-role = "Professor of Artificial Intelligence"
+role = "AI/SLAM Researcher"
 
 # Organizations/Affiliations
 #   Separate multiple entries with a comma, using the form: `[ {name="Org1", url=""}, {name="Org2", url=""} ]`.
-organizations = [ { name = "Stanford University", url = "" } ]
+organizations = [ { name = "Imperial College London", url = "" } ]
 
 # Short bio (displayed in user profile at end of posts)
 bio = "My research interests include distributed robotics, mobile computing and programmable matter."
@@ -20,26 +20,26 @@ email = ""
 
 # List (academic) interests or hobbies
 interests = [
-  "Artificial Intelligence",
-  "Computational Linguistics",
-  "Information Retrieval"
+  "Deep Learning",
+  "SLAM",
+  "Robotics"
 ]
 
 # List qualifications (such as academic degrees)
 [[education.courses]]
-  course = "PhD in Artificial Intelligence"
-  institution = "Stanford University"
+  course = "PhD in Computing Research"
+  institution = "Imperial College London"
+  year = 2019
+
+[[education.courses]]
+  course = "MEng in Robotics"
+  institution = "Warsaw University of Technology"
+  year = 2015
+
+[[education.courses]]
+  course = "BSc in Robotics"
+  institution = "Warsaw University of Technology"
   year = 2012
-
-[[education.courses]]
-  course = "MEng in Artificial Intelligence"
-  institution = "Massachusetts Institute of Technology"
-  year = 2009
-
-[[education.courses]]
-  course = "BSc in Artificial Intelligence"
-  institution = "Massachusetts Institute of Technology"
-  year = 2008
 
 # Social/Academic Networking
 # For available icons, see: https://sourcethemes.com/academic/docs/widgets/#icons
@@ -49,32 +49,45 @@ interests = [
 [[social]]
   icon = "envelope"
   icon_pack = "fas"
-  link = "#contact"  # For a direct email link, use "mailto:test@example.org".
+  #link = "#contact"  # For a direct email link, use "mailto:test@example.org".
+  link = "mailto:jancz@tuta.io"  # For a direct email link, use "mailto:test@example.org".
 
 [[social]]
   icon = "twitter"
   icon_pack = "fab"
-  link = "https://twitter.com/GeorgeCushen"
+  link = "https://twitter.com/czarnowskij"
+
+[[social]]
+  icon = "linkedin"
+  icon_pack = "fab"
+  link = "https://www.linkedin.com/in/jczarnowski"
 
 [[social]]
   icon = "google-scholar"
   icon_pack = "ai"
-  link = "https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ"
+  link = "https://scholar.google.com/citations?user=t-eq4skAAAAJ&hl=en&oi=ao"
 
 [[social]]
   icon = "github"
   icon_pack = "fab"
-  link = "https://github.com/gcushen"
+  link = "https://github.com/jczarnowski"
 
 # Link to a PDF of your resume/CV from the About widget.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
-# [[social]]
-#   icon = "cv"
-#   icon_pack = "ai"
-#   link = "files/cv.pdf"
+[[social]]
+  icon = "cv"
+  icon_pack = "ai"
+  link = "files/cv.pdf"
 
 +++
 
-Nelson Bighetti is a professor of artificial intelligence at the Stanford AI Lab. His research interests include distributed robotics, mobile computing and programmable matter. He leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate. 
+My name is Jan Czarnowski and I am a PhD Student in Dyson Robotics Lab of
+Imperial College London, working on efficient computer vision/SLAM for
+robotics. I am supervised by prof. Andrew Davision and dr Stefan Leutenegger.
+Previously, I've studied Computer Science (BSc) and Robotics (BSc + MSc) at
+Warsaw University of Technology. I've also been leading the Autonomous Systems
+Team in Industrial Research Institute for Automation and Measurements (PIAP) in
+Warsaw.  I am passionate about robots and computers -- my research interests
+revolve around robustifying SLAM with deep learning and novel processor
+architectures more suitable to the sparse nature of intelligent algorithms. 
+Outside of research I play a lot of computer games and like to do programming.
