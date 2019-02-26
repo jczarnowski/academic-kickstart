@@ -1,0 +1,160 @@
+diff --git a/layouts/partials/css/academic.css b/layouts/partials/css/academic.css
+index 44a9dd6..7cce66f 100644
+--- a/layouts/partials/css/academic.css
++++ b/layouts/partials/css/academic.css
+@@ -862,7 +862,8 @@ article {
+ }
+ 
+ .article-title {
+-  font-size: 1.75rem;
++  font-size: 1.35rem;
++  margin-top: 0rem;
+ }
+ 
+ .article-title a {
+@@ -879,7 +880,7 @@ article {
+ }
+ 
+ .article-metadata {
+-  margin-bottom: 15px;
++  margin-bottom: 10px;
+   overflow: hidden;
+   font-size: 14px;
+   letter-spacing: 0.03em;
+@@ -912,10 +913,15 @@ article .article-metadata {
+   color: {{ .Get "primary" }};
+ }
+ 
++.article-authors {
++  display: inline-block;
++}
++
+ .middot-divider {
+   padding-right: .45em;
+   padding-left: .45em;
+   font-size: 15px;
++  display: inline-block;
+ }
+ 
+ .middot-divider::after {
+@@ -1084,6 +1090,7 @@ article .article-metadata {
+ 
+ .pub-list-item .pub-abstract {
+   font-size: 1rem;
++  margin-bottom: 0.3cm;
+ }
+ 
+ .pub-list-item .btn-links {
+diff --git a/layouts/partials/footer_section.html b/layouts/partials/footer_section.html
+index 6f730f0..fd0131d 100644
+--- a/layouts/partials/footer_section.html
++++ b/layouts/partials/footer_section.html
+@@ -12,6 +12,13 @@
+     <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+     <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+ 
++		<br>
++		Favicon made by 
++		<a href="https://www.flaticon.com/authors/darius-dan" title="Darius Dan">Darius Dan</a> 
++		from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> 
++		is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY
++		</a>
++
+     {{ if ne .Type "docs" }}
+     <span class="float-right" aria-hidden="true">
+       <a href="#" id="back_to_top">
+diff --git a/layouts/partials/page_metadata.html b/layouts/partials/page_metadata.html
+index 568c059..8a2035c 100644
+--- a/layouts/partials/page_metadata.html
++++ b/layouts/partials/page_metadata.html
+@@ -11,13 +11,13 @@
+   {{ if $.Params.authors }}
+   {{ $authorLen := len $.Params.authors }}
+   {{ if gt $authorLen 0 }}
+-  <div>
++  <div class="article-authors">
+     {{ partial "page_metadata_authors" $ }}
+   </div>
+   {{ end }}
+   {{ end }}
+ 
+-  {{ if not (in (slice "talk" "page") $.Type) }}
++  {{ if not (in (slice "publication" "talk" "page") $.Type) }}
+   <span class="article-date">
+     {{ $date := $.Lastmod.Format $.Site.Params.date_format }}
+     {{ if eq $.Type "publication" }}
+diff --git a/layouts/partials/publication_li_card.html b/layouts/partials/publication_li_card.html
+index 454d26c..8544971 100644
+--- a/layouts/partials/publication_li_card.html
++++ b/layouts/partials/publication_li_card.html
+@@ -1,21 +1,15 @@
+ <div class="pub-list-item card-simple" itemscope itemtype="http://schema.org/CreativeWork">
+-  {{ partial "page_metadata" (dict "content" $ "is_list" 1) }}
+-
+-  {{ $resource := (.Resources.ByType "image").GetMatch "*featured*" }}
+-  {{ $anchor := .Params.image.focal_point | default "Smart" }}
+-  {{ with $resource }}
+-  {{ $image := .Fill (printf "918x517 q90 %s" $anchor) }}
+-  <div>
+-    <a href="{{ $.RelPermalink }}">
+-      <img src="{{ $image.RelPermalink }}" class="article-banner" itemprop="image" alt="">
+-    </a>
+-  </div>
+-  {{end}}
+ 
+   <h3 class="article-title" itemprop="name">
+-    <a href="{{ .RelPermalink }}" itemprop="url">{{ .Title }}</a>
++    {{ if .Params.url_pdf }}
++    <a href="{{ .Params.url_pdf }}">{{ .Title }}</a>
++    {{ else }}
++    {{ .Title }}
++    {{ end }}
+   </h3>
+ 
++  {{ partial "page_metadata" (dict "content" $ "is_list" 1) }}
++
+   <div class="pub-abstract" itemprop="text">
+     {{ if .Params.abstract_short }}
+       {{ .Params.abstract_short | markdownify }}
+@@ -24,8 +18,21 @@
+     {{ end }}
+   </div>
+ 
++  {{ if .Params.url_embed }}
++  <div class="embed-video">
++  <center>
++    <iframe width="100%" height="415" 
++      src="https://www.youtube.com/embed/{{ .Params.url_embed }}" 
++      frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
++      allowfullscreen>
++    </iframe>
++  </center>
++  </div>
++  {{ end }}
++
+   <div class="btn-links">
+     {{ partial "page_links" (dict "content" . "is_list" 1) }}
+   </div>
+ 
++
+ </div>
+diff --git a/layouts/partials/widgets/publications.html b/layouts/partials/widgets/publications.html
+index 28a04d4..b93d27e 100644
+--- a/layouts/partials/widgets/publications.html
++++ b/layouts/partials/widgets/publications.html
+@@ -27,6 +27,8 @@
+         {{ partial "publication_li_card" . }}
+       {{ else if eq $page.Params.view 4 }}
+         {{ partial "publication_li_citation" . }}
++      {{ else if eq $page.Params.view 5 }}
++        {{ partial "publication_li_mystyle" . }}
+       {{ else }}
+         {{ partial "publication_li_compact" . }}
+       {{ end }}
+@@ -40,6 +42,5 @@
+       </a>
+     </div>
+     {{ end }}
+-
+   </div>
+ </div>
