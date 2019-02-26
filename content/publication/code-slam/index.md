@@ -18,12 +18,20 @@ authors = ["Michael Bloesch", "Jan Czarnowski", "Ronald Clark", "Stefan Leuteneg
 publication_types = ["1"]
 
 # Publication name and optional abbreviated version.
-publication = "In *CVPR2018*"
-publication_short = "In *CVPR2018*"
+publication = "*CVPR 2018*"
+publication_short = "*CVPR 2018*"
 
 # Abstract and optional shortened version.
 abstract = "The representation of geometry in real-time 3D perception systems continues to be a critical research issue. Dense maps capture complete surface shape and can be augmented with semantic labels, but their high dimensionality makes them computationally costly to store and process, and unsuitable for rigorous probabilistic inference. Sparse feature-based representations avoid these problems, but capture only partial scene information and are mainly useful for localisation only.We present a new compact but dense representation of scene geometry which is conditioned on the intensity data from a single image and generated from a code consisting of a small number of parameters. We are inspired by work both on learned depth from images, and auto-encoders. Our approach is suitable for use in a keyframe-based monocular dense SLAM system: While each keyframe with a code can produce a depth map, the code can be optimised efficiently jointly with pose variables and together with the codes of overlapping keyframes to attain global consistency. Conditioning the depth map on the image allows the code to only represent aspects of the local geometry which cannot directly be predicted from the image. We explain how to learn our code representation, and demonstrate its advantageous properties in monocular SLAM."
-abstract_short = ""
+abstract_short = """
+Joint work with Michael Bloesch on learning a compact representation for depth
+maps. We showed that it is possible to use the latent representation learned by
+a modified auto-encoder network as an alternative manifold for optimization. We
+have demonstrated a simple SLAM system using the proposed method that is able
+to reconstruct scenes where conventional methods fail. 
+
+*This work has received the Best Paper Honorable Mention award at CVPR 2018.*
+"""
 
 # Is this a featured publication? (true/false)
 featured = false
@@ -58,6 +66,7 @@ url_slides = ""
 url_video = "https://youtu.be/PbSggzaZWAQ"
 url_poster = ""
 url_source = ""
+url_embed = "PbSggzaZWAQ"
 
 # Custom links (optional).
 #   Uncomment line below to enable. For multiple links, use the form `[{...}, {...}, {...}]`.

@@ -2,13 +2,13 @@
 # Recent Publications widget.
 # This widget displays recent publications from `content/publication/`.
 widget = "publications"  # Do not modify this line!
-active = false  # Activate this widget? true/false
+active = true  # Activate this widget? true/false
 
-title = "Publications"
-subtitle = ""
+title = "Research Highlights"
+subtitle = "Full list of publications available on [Google Scholar](https://scholar.google.com/citations?user=t-eq4skAAAAJ)"
 
 # Order that this section will appear in.
-weight = 30
+weight = 20
 
 # Number of publications to list.
 count = 10
@@ -18,7 +18,6 @@ count = 10
 #   2 = Compact
 #   3 = Card
 #   4 = Citation
-#   5 = My Style
 view = 3
 
 # Filter by publication type.
@@ -35,3 +34,4 @@ publication_type = "-1"
 # Exclude publications that are shown in the Featured Publications widget?
 exclude_featured = false
 +++
+

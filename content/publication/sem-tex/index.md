@@ -19,11 +19,11 @@ publication_types = ["1"]
 
 # Publication name and optional abbreviated version.
 publication = "ICCV 2017 Workshop"
-publication_short = "ICCV 2017 Workshop "
+publication_short = "ICCV 2017 Workshop"
 
 # Abstract and optional shortened version.
 abstract = "We  argue  that  robust  dense  SLAM  systems  can  makevaluable use of the layers of features coming from a stan-dard CNN as a pyramid of ‘semantic texture’ which is suit-able for dense alignment while being much more robust tonuisance factors such as lighting than raw RGB values. Weuse a straightforward Lucas-Kanade formulation of imagealignment, with a schedule of iterations over the coarse-to-fine levels of a pyramid, and simply replace the usual im-age pyramid by the hierarchy of convolutional feature mapsfrom a pre-trained CNN. The resulting dense alignment per-formance is much more robust to lighting and other varia-tions, as we show by camera rotation tracking experimentson time-lapse sequences captured over many hours.  Look-ing towards the future of scene representation for real-timevisual SLAM, we further demonstrate that a selection usingsimple criteria of a small number of the total set of featuresoutput by a CNN gives just as accurate but much more effi-cient tracking performance."
-abstract_short = ""
+abstract_short = "This work demonstrates that it is possible to perform dense whole-image alignment on feature activations coming from an off-the-shelf CNN classifier. These features form a pyramid of varying semantic levels which, optimized in a coarse-to-fine manner, allows for much more robust camera tracking."
 
 # Is this a featured publication? (true/false)
 featured = false
@@ -58,6 +58,7 @@ url_slides = ""
 url_video = "https://youtu.be/SkpHccE1eTQ"
 url_poster = ""
 url_source = ""
+url_embed = "SkpHccE1eTQ"
 
 # Custom links (optional).
 #   Uncomment line below to enable. For multiple links, use the form `[{...}, {...}, {...}]`.

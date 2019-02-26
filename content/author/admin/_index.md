@@ -20,9 +20,9 @@ email = ""
 
 # List (academic) interests or hobbies
 interests = [
+  "Visual SLAM",
   "Deep Learning",
-  "SLAM",
-  "Robotics"
+  "Reinforcement Learning"
 ]
 
 # List qualifications (such as academic degrees)
@@ -39,7 +39,7 @@ interests = [
 [[education.courses]]
   course = "BSc in Robotics"
   institution = "Warsaw University of Technology"
-  year = 2012
+  year = 2013
 
 # Social/Academic Networking
 # For available icons, see: https://sourcethemes.com/academic/docs/widgets/#icons
@@ -79,15 +79,15 @@ interests = [
   icon_pack = "ai"
   link = "files/cv.pdf"
 
+#My research focuses on robustifying and pushing what we can achieve with Dense
+#SLAM by introducing Deep Learning elements.
+
 +++
 
-My name is Jan Czarnowski and I am a PhD Student in Dyson Robotics Lab of
-Imperial College London, working on efficient computer vision/SLAM for
-robotics. I am supervised by prof. Andrew Davision and dr Stefan Leutenegger.
-Previously, I've studied Computer Science (BSc) and Robotics (BSc + MSc) at
-Warsaw University of Technology. I've also been leading the Autonomous Systems
-Team in Industrial Research Institute for Automation and Measurements (PIAP) in
-Warsaw.  I am passionate about robots and computers -- my research interests
-revolve around robustifying SLAM with deep learning and novel processor
-architectures more suitable to the sparse nature of intelligent algorithms. 
-Outside of research I play a lot of computer games and like to do programming.
+Hi! My name is Jan Czarnowski, I am a **PhD Student at Imperial College London** under the
+supervision of [Andrew Davison](https://www.doc.ic.ac.uk/~ajd). Prior to that I led a team of
+robotics researchers in [PIAP](https://piap.pl/en), Warsaw. 
+My research focuses on integrating **Deep Learning** with **Dense Visual SLAM** in
+order to push the boundaries of spatial perception with a single camera.
+I enjoy building systems that work in **real-time** and produce good-looking 3D visualisations
+and probably spend too much time on computer games.
